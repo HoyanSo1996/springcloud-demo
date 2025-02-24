@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.omega.springcloud-demo</groupId>
+    <artifactId>SpringCloud-Demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!-- 表明是一个父工程, 聚合管理其他模块 -->
+    <packaging>pom</packaging>
+
+    <properties>
+        <!-- 配置编译版本 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!-- 统一配置各个依赖版本 -->
+        <junit.version>4.12</junit.version>
+        <log4j.version>2.17.2</log4j.version>
+        <mysql.version>5.1.47</mysql.version>
+        <druid.version>1.1.16</druid.version>
+        <lombok.version>1.18.20</lombok.version>
+        <mybatis.spring.boot.version>2.2.0</mybatis.spring.boot.version>
+    </properties>
+
+    <!-- dependencyManagement 用于锁定依赖版本和作用范围 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.2.2.RELEASE</version>
+                <!--
+                    通过 pom + import 配合使用, 解决 maven 单继承机制(即一个子项目可以继承多个父项目),
+                    下面两个 dependencies 是父项目, 不是 jar 包, 所以需要 pom + import
+                -->
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Hoxton.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.spring.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
