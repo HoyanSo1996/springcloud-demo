@@ -8,6 +8,9 @@
     <version>1.0-SNAPSHOT</version>
     <!-- 表明是一个父工程, 聚合管理其他模块 -->
     <packaging>pom</packaging>
+    <modules>
+        <module>user-service-provider-01</module>
+    </modules>
 
     <properties>
         <!-- 配置编译版本 -->
