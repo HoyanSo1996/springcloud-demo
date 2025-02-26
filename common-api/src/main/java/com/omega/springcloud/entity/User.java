@@ -6,6 +6,12 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+/**
+ * Class User
+ *
+ * @author KennySo
+ * @date 2024/12/4
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

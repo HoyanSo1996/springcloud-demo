@@ -2,6 +2,12 @@ package com.omega.springcloud.entity;
 
 import lombok.Data;
 
+/**
+ * Class Result
+ *
+ * @author KennySo
+ * @date 2024/12/4
+ */
 @Data
 public class Result<T> {
 
