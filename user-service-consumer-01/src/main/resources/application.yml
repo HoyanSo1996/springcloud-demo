@@ -13,5 +13,6 @@ eureka:
     # 进行服务发现, 默认为 true, 单节点无所谓，集群必须设置为 true 才能配合 ribbon 使用负载均衡.
     fetch-registry: true
     service-url:
-      # 表示将自己注册到哪个 eureka Server
-      defaultZone: http://localhost:9001/eureka/
+      # 表示将自己注册到哪个 Eureka Server, 如果有多个服务器, 用逗号隔开
+      # defaultZone: http://eureka9001.com:9001/eureka,http://eureka9002.com:9002/eureka
+      defaultZone: http://localhost:9001/eureka

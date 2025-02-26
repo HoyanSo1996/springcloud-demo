@@ -1,0 +1,15 @@
+server:
+  port: 9002
+
+# 配置 eureka 服务端
+eureka:
+  instance:
+    hostname: eureka9002.com  # eureka 服务端的域名
+  client:
+    # 不用进行服务注册
+    register-with-eureka: false
+    # 不用进行服务发现
+    fetch-registry: false
+    service-url:
+      # 相互注册, 这里填写第一台 eureka server
+      defaultZone: http://eureka9001.com:9001/eureka

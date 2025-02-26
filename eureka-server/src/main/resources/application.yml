@@ -4,9 +4,13 @@ server:
 # 配置 eureka 服务端
 eureka:
   instance:
+    # hostname: eureka9001.com  # 这里可以填真实域名 (必须在搭建 Eureka 集群的情况下才能这么做)
     hostname: localhost # eureka 服务端的域名
   client:
     # 不用进行服务注册
     register-with-eureka: false
     # 不用进行服务发现
     fetch-registry: false
+#    service-url:
+#      # 相互注册, 这里填写第二台 eureka server
+#      defaultZone: http://eureka9002.com:9002/eureka

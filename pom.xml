@@ -14,6 +14,7 @@
         <module>user-service-consumer-01</module>
         <module>common-api</module>
         <module>eureka-server</module>
+        <module>eureka-server2</module>
     </modules>
 
     <properties>
