@@ -1,4 +1,4 @@
-package com.omega.springcloud.config;
+package com.omega.springcloud.controller;
 
 import com.omega.springcloud.entity.Result;
 import lombok.extern.slf4j.Slf4j;

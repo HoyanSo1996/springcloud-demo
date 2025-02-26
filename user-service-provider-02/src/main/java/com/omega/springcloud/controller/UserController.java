@@ -18,10 +18,10 @@ public class UserController {
 
     @GetMapping("/query/{id}")
     public Result<User> query(@PathVariable("id") Long id) {
-        log.info("生产者01 接收到的 id = {}", id);
+        log.info("生产者02 接收到的 id = {}", id);
         User user = userService.queryById(id);
         if (user != null) {
-            return Result.success("user-service-provider-01 查询成功~", user);
+            return Result.success("user-service-provider-02 查询成功~", user);
         } else {
             return Result.error("402", "id = " + id + " 的用户不存在");
         }
@@ -29,10 +29,10 @@ public class UserController {
 
     @PostMapping("/save")
     public Result<Object> save(@RequestBody User user) {
-        log.info("生产者01 接收到的 user = {}", user);
+        log.info("生产者02 接收到的 user = {}", user);
         Integer count = userService.save(user);
         if (count > 0) {
-            return Result.success("user-service-provider-01 添加用户成功", count);
+            return Result.success("user-service-provider-02 添加用户成功~", count);
         } else {
             return Result.error("401", "添加用户失败");
         }
