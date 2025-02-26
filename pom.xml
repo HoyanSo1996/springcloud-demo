@@ -13,6 +13,7 @@
         <module>user-service-provider-01</module>
         <module>user-service-consumer-01</module>
         <module>common-api</module>
+        <module>eureka-server</module>
     </modules>
 
     <properties>

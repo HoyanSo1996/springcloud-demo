@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.omega.springcloud-demo</groupId>
+        <artifactId>SpringCloud-Demo</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <!-- 因为是子模块, 所以不需要指定 groupId 了, 从父工程继承 -->
+    <artifactId>eureka-server</artifactId>
+
+    <dependencies>
+        <!-- 引入 eureka-server -->
+        <!-- 里面包含了 spring-boot-starter-web 和 spring-boot-starter-actuator -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+    </dependencies>
+</project>
