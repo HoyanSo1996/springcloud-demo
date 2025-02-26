@@ -2,8 +2,10 @@ package com.omega.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
+@EnableDiscoveryClient  // 开启 服务发现功能
 @EnableEurekaClient // 开启 eureka client
 @SpringBootApplication
 public class UserServiceConsumerApplication01 {
