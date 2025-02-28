@@ -1,0 +1,6 @@
+server:
+  port: 8092
+
+spring:
+  application:
+    name: user-service-consumer  # 服务名 (在 eureka ui 上显示)
