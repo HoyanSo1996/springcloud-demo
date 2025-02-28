@@ -1,0 +1,19 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: user-service-provider  # 服务集群名 (在 eureka ui 上显示)
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource  # 与 druid-spring-boot-starter 配合使用
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springcloud_db?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+
+mybatis:
+  mapperLocations: classpath:com/omega/springcloud/mapper/*.xml  # mapper 文件的位置
+  type-aliases-package: com.omega.springcloud.entity  # 实体类的包路径
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 配置 SQL 日志
+    map-underscore-to-camel-case: true # 配置 驼峰命名法
