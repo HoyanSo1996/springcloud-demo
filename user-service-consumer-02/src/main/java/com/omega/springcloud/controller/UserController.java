@@ -10,16 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
-import java.util.Arrays;
-import java.util.List;
 
 @Slf4j
 @RestController
 @RequestMapping("/consumer/user")
 public class UserController {
-    private static List<String> targetPortList = Arrays.asList("8083", "8084");
 
-    private static int count = 0;
+    // user-service-provider 就是服务提供方注册到 Nacos Server 的名称 (要和配置文件里的服务名大小写保持一致).
+    private static final String USER_SERVICE_PROVIDER_URL = "http://user-service-provider";
 
     @Resource
     private RestTemplate restTemplate;
@@ -27,14 +25,14 @@ public class UserController {
     @RequestMapping("/query/{id}")
     public Result query(@PathVariable("id") Long id) {
         log.info("消费者02 接收到的 id = {}", id);
-        String url = "http://localhost:" + targetPortList.get(count++ % targetPortList.size()) + "/provider/user/query/" + id;
+        String url = USER_SERVICE_PROVIDER_URL + "/provider/user/query/" + id;
         return restTemplate.getForObject(url, Result.class);
     }
 
     @RequestMapping("/save")
     public Result save(@RequestBody User user) {
         log.info("消费者02 接收到的 user = {}", user);
-        String url = "http://localhost:"+ targetPortList.get(count++ % targetPortList.size()) +"/provider/user/save";
+        String url = USER_SERVICE_PROVIDER_URL + "/provider/user/save";
         return restTemplate.postForObject(url, user, Result.class);
     }
 }
