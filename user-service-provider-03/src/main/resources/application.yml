@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: user-service-provider  # 服务集群名 (在 eureka ui 上显示)
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848  #配置 Nacos 地址
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource  # 与 druid-spring-boot-starter 配合使用
     driver-class-name: com.mysql.jdbc.Driver

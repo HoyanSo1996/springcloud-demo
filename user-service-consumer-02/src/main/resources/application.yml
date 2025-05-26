@@ -4,3 +4,7 @@ server:
 spring:
   application:
     name: user-service-consumer  # 服务名 (在 eureka ui 上显示)
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848  #配置 Nacos 地址
