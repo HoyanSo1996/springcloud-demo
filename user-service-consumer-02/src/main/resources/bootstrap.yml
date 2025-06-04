@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848  # 配置中心地址
+        file-extension: yaml  # 配置文件拓展名
