@@ -4,3 +4,5 @@ spring:
       config:
         server-addr: localhost:8848  # 配置中心地址
         file-extension: yaml  # 配置文件拓展名
+        # group: group_1 # 指定开发小组名称, 默认 DEFAULT_GROUP
+        # namespace: 6a40f5f5-a388-403e-860d-0a9e7261bf6a  # 如果不配置, 默认为 public
