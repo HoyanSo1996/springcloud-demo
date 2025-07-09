@@ -15,6 +15,9 @@ public class NacosConfig {
 
     @Value("${config.password}")
     private String password;
+
+    @Value("${config.sharedValue}")
+    private String sharedValue;
 }
 
 

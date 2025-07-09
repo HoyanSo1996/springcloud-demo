@@ -21,6 +21,7 @@ public class NacosConfigController {
         Map<String, String> map = new HashMap<>();
         map.put("username", nacosConfig.getUsername());
         map.put("password", nacosConfig.getPassword());
+        map.put("sharedValue", nacosConfig.getSharedValue());
         return map;
     }
 }
