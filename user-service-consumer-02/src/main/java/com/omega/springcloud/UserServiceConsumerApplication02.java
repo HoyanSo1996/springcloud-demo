@@ -3,7 +3,9 @@ package com.omega.springcloud;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
+@EnableFeignClients // 开启 Feign 功能
 @EnableDiscoveryClient  // 开启配置发现功能
 @SpringBootApplication
 public class UserServiceConsumerApplication02 {

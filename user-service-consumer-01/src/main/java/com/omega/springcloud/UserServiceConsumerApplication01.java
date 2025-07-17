@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 //@RibbonClients(defaultConfiguration = RibbonRule.class)
 //@RibbonClients({
@@ -11,6 +12,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 //        @RibbonClient(name = "BService", configuration = BRibbonRule.class)
 //})
 //@RibbonClient(name = "USER_SERVICE_PROVIDER", configuration = RibbonRule.class)
+@EnableFeignClients // 开启 Feign 功能
 @EnableDiscoveryClient  // 开启 服务发现功能
 @EnableEurekaClient // 开启 eureka client
 @SpringBootApplication
