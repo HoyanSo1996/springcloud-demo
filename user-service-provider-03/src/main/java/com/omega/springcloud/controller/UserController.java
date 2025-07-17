@@ -19,6 +19,12 @@ public class UserController {
     @GetMapping("/query/{id}")
     public Result<User> query(@PathVariable("id") Long id) {
         log.info("生产者03 接收到的 id = {}", id);
+        // 暂停几秒钟线程
+        // try {
+        //     Thread.sleep(3000);
+        // } catch (InterruptedException e) {
+        //     e.printStackTrace();
+        // }
         User user = userService.queryById(id);
         if (user != null) {
             return Result.success("user-service-provider-03 查询成功~", user);
