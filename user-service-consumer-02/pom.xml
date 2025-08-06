@@ -56,5 +56,17 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+
+        <!-- 引入 httpClient -->
+        <!-- <dependency> -->
+        <!--     <groupId>io.github.openfeign</groupId> -->
+        <!--     <artifactId>feign-httpclient</artifactId> -->
+        <!-- </dependency> -->
+
+        <!-- 引入 okHttp -->
+        <!-- <dependency> -->
+        <!--     <groupId>io.github.openfeign</groupId> -->
+        <!--     <artifactId>feign-okhttp</artifactId> -->
+        <!-- </dependency> -->
     </dependencies>
 </project>
