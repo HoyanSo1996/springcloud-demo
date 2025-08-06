@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.Map;
 
 @Slf4j
 @RestController
@@ -41,6 +42,19 @@ public class UserController {
             return Result.success("user-service-provider-03 添加用户成功~", count);
         } else {
             return Result.error("401", "添加用户失败");
+        }
+    }
+
+
+    @GetMapping("/find/{id}")
+    public Result<User> findWithRequestHeader(@PathVariable("id") Long id, @RequestHeader Map<String, String> map) {
+        log.info("生产者03 接收到的 id = {}", id);
+        log.info("生产者03 接收到的 x-key = {}", map.get("x-key"));
+        User user = userService.queryById(id);
+        if (user != null) {
+            return Result.success("user-service-provider-03 查询成功~", user);
+        } else {
+            return Result.error("402", "id = " + id + " 的用户不存在");
         }
     }
 }

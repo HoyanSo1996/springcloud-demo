@@ -49,4 +49,15 @@ public class UserController {
         log.info("消费者02 接收到的 user = {}", user);
         return userWebService.save(user);
     }
+
+    @RequestMapping("/find/{id}")
+    public Result find(@PathVariable("id") Long id) {
+        log.info("消费者02 接收到的 id = {}", id);
+        // return userWebService.findWithRequestHeader1(id);
+        // return userWebService.findWithRequestHeader2(id, "222222");
+        // LinkedMultiValueMap<String, String> map = new LinkedMultiValueMap<>();
+        // map.add("X-Key", "222222222222");
+        // return userWebService.findWithRequestHeader22(id, map);
+        return userWebService.findWithRequestHeader3(id);
+    }
 }
