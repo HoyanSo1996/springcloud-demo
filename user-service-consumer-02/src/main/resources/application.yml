@@ -44,3 +44,6 @@ feign:
       # 为特定客户端配置, 可以配置多个
       user-service-provider:  # 对应 @FeignClient 的 name 或 contextId
         loggerLevel: FULL
+
+feign-client:
+  user-service-url: http://localhost:8083/provider/user

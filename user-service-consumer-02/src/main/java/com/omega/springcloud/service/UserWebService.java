@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
+// @FeignClient(name = "userWebService", url = "${feign-client.user-service-url}")
 // @FeignClient(name = "userWebService", url = "http://localhost:8083", path = "/provider/user")
 @FeignClient(name = "user-service-provider", path = "/provider/user")  // 这里指定服务生产者在注册中心上的别名
 @Service
