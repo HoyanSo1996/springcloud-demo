@@ -12,7 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 //        @RibbonClient(name = "BService", configuration = BRibbonRule.class)
 //})
 //@RibbonClient(name = "USER_SERVICE_PROVIDER", configuration = RibbonRule.class)
-@EnableFeignClients // 开启 Feign 功能
+@EnableFeignClients(basePackages = "com.omega.springcloud.service") // 开启 Feign 功能
 @EnableDiscoveryClient  // 开启 服务发现功能
 @EnableEurekaClient // 开启 eureka client
 @SpringBootApplication
