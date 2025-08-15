@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @Slf4j
@@ -18,8 +19,9 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/query/{id}")
-    public Result<User> query(@PathVariable("id") Long id) {
+    public Result<User> query(@PathVariable("id") Long id, HttpServletRequest request) {
         log.info("生产者03 接收到的 id = {}", id);
+        log.info("color = {}.", request.getParameter("color"));
         // 暂停几秒钟线程
         // try {
         //     Thread.sleep(3000);

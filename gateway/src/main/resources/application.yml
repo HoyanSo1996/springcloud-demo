@@ -28,6 +28,9 @@ spring:
             # - Method=Get
             # - Query=email  # 带有请求参数email, 且请求值符合邮箱的正则表达式
             # - RemoteAddr=127.0.0.1
+          # 设置过滤器
+          filters:
+            - AddRequestParameter=color,blue  #在匹配的请求头加上一对请求头，名称为color值为blue
         - id: user_route02  # 路由id, 程序员自己指定
           #uri: http://localhost:8083
           uri: lb://user-service-provider
