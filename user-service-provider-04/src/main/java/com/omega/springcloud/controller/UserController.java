@@ -51,4 +51,17 @@ public class UserController {
             return Result.error("402", "id = " + id + " 的用户不存在");
         }
     }
+
+
+    @PostMapping("/query")
+    public Result<User> query2(@RequestParam("id") Long id, @RequestParam("email") String email) {
+        log.info("生产者04 接收到的 id = {}", id);
+        log.info("生产者04 接收到的 email = {}", email);
+        User user = userService.queryById(id);
+        if (user != null) {
+            return Result.success("user-service-provider-04 查询成功~", user);
+        } else {
+            return Result.error("402", "id = " + id + " 的用户不存在");
+        }
+    }
 }

@@ -19,6 +19,15 @@ spring:
           # 设置断言
           predicates:
             - Path=/provider/user/query/**
+            # - After=2025-08-15T15:11:30.960+08:00[Asia/Shanghai]
+            # - Before=2025-08-15T15:11:30.960+08:00[Asia/Shanghai]
+            # - Between=2025-08-15T15:11:30.960+08:00[Asia/Shanghai],2025-08-16T15:11:30.960+08:00[Asia/Shanghai]
+            # - Cookie=chocolate, ch.p
+            # - Header=X-Key, hello
+            # - Host=**.baidu2.**,**.sohu2,**
+            # - Method=Get
+            # - Query=email  # 带有请求参数email, 且请求值符合邮箱的正则表达式
+            # - RemoteAddr=127.0.0.1
         - id: user_route02  # 路由id, 程序员自己指定
           #uri: http://localhost:8083
           uri: lb://user-service-provider
