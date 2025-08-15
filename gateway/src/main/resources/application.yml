@@ -14,12 +14,14 @@ spring:
         - id: user_route01  # 路由id, 程序员自己指定
           # uri 是匹配后提供服务的路由地址
           # 路由请求转发的 url = uri + path, 即 http://localhost:8083/provider/user/query
-          uri: http://localhost:8083
+          #uri: http://localhost:8083
+          uri: lb://user-service-provider
           # 设置断言
           predicates:
             - Path=/provider/user/query/**
         - id: user_route02  # 路由id, 程序员自己指定
-          uri: http://localhost:8083
+          #uri: http://localhost:8083
+          uri: lb://user-service-provider
           # 设置断言
           predicates:
             - Path=/provider/user/save
