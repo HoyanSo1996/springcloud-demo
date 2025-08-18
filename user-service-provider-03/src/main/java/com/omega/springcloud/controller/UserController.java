@@ -21,7 +21,7 @@ public class UserController {
     @GetMapping("/query/{id}")
     public Result<User> query(@PathVariable("id") Long id, HttpServletRequest request) {
         log.info("生产者03 接收到的 id = {}", id);
-        log.info("color = {}.", request.getParameter("color"));
+        log.info("color = {}, key = {}.", request.getParameter("color"), request.getParameter("key"));
         // 暂停几秒钟线程
         // try {
         //     Thread.sleep(3000);

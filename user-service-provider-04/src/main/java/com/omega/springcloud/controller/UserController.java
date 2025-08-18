@@ -21,7 +21,7 @@ public class UserController {
     @GetMapping("/query/{id}")
     public Result<User> query(@PathVariable("id") Long id, HttpServletRequest request) {
         log.info("生产者03 接收到的 id = {}", id);
-        log.info("color = {}.", request.getParameter("color"));
+        log.info("color = {}, key = {}.", request.getParameter("color"), request.getParameter("key"));
         User user = userService.queryById(id);
         if (user != null) {
             return Result.success("user-service-provider-04 查询成功~", user);
