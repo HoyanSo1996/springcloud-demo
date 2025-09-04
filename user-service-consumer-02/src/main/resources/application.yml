@@ -47,8 +47,8 @@ feign:
       default:
         loggerLevel: BASIC
       # 为特定客户端配置, 可以配置多个
-      user-service-provider:  # 对应 @FeignClient 的 name 或 contextId
-        loggerLevel: FULL
+#      user-service-provider:  # 对应 @FeignClient 的 name 或 contextId
+#        loggerLevel: FULL
 #  httpclient:
 #    enabled: true # HttpClient的开关, 默认已启用
 #    max-connections: 200  # 线程池最大连接数
