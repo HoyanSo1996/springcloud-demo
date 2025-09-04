@@ -14,6 +14,11 @@ spring:
     url: jdbc:mysql://localhost:3306/springcloud_db?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: root
+#  zipkin:
+#    base-url: http://localhost:9411  # 服务器地址
+#    sleuth:
+#      sampler:
+#        probability: 1  # 采样百分比, 在0-1之间, 1表示全部采集.
 
 mybatis:
   mapperLocations: classpath:com/omega/springcloud/mapper/*.xml  # mapper 文件的位置
